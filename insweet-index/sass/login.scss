@@ -83,8 +83,109 @@
         }
     }
 }
-
-
+.login-tab{
+	width: 80%;
+	margin: 1em auto 0;
+	a{
+		display: table-cell;
+		width: 1%;
+		text-align: center;
+		font-size: 1em;
+		line-height: 2em;
+		border-radius: 5px 5px 0 0;
+		border:{
+			width: 0px;
+			style: solid;
+			bottom-width:2px;
+			bottom-color:#0156a6;
+		} 
+		background: #e6e6e6;
+		&.active{
+			background: #fff;
+			border:{
+				width: 2px;
+				bottom-width:0px;
+				color: #0156a6;
+			}
+		}
+	}
+}
+.login-box{
+	width: 80%;
+	margin: 30px auto 30px;
+	@at-root{
+		.inner-box{
+			li{
+				margin-bottom: 25px;
+				label{
+					float: left;
+					width: 20%;
+					line-height: 30px;
+					text-align: right;
+				}
+				div{
+					overflow: hidden;
+					input{
+						float: left;
+						height: 32px;
+						width: 100%;
+						text-indent: 5px;
+						border-radius: 5px;
+						box-sizing: border-box;
+						border:{
+							color: #c8c8c8;
+							width: 1px;
+						}
+						outline: none;
+						box-shadow: none !important;
+					}
+				}
+				.btn-group{
+					input{
+						width: 60%;
+						padding: 0;
+						margin: 0;
+					}
+					.btn{
+						height: 32px;
+						width: 39%;
+						border: 1px solid #0057a7;
+						outline: none;
+						box-shadow: none !important;
+						color: #0057a7;
+						background: #fff;
+					}
+					span{
+						line-height: 30px;
+						font-size: .75em;
+						padding: 0 5px;
+					}
+				}
+				.phone-group{
+					input{
+						border-radius: 5px 0 0 5px;
+						border-right: none;
+					}
+					button{
+						border-radius: 0 5px 5px 0;
+					}
+				}
+			}
+		}
+		.login-btn{
+			display: block;
+			width: 70%;
+			height: 32px;
+			margin-left: 20%;
+			background: #0057a7;
+			color: #fff;
+			border-radius: 5px;
+			border: none;
+			box-shadow: none;
+			outline: none;
+		}
+	}
+}
 
 
 
