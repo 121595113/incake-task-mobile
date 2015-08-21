@@ -55,14 +55,10 @@
 					var tempHeight = document.body.scrollHeight;
 					try {
 						this.shadow.style.height = tempHeight + 'px';
-					} catch (e) {
-
-					}
+					} catch (e) {}
 				},
 				hide: function() {
-					if (!this.shadow) {
-						this.createShadow();
-					}
+					if (!this.shadow) this.createShadow();
 					this.shadow.style.display = 'none';
 				}
 			};
@@ -93,7 +89,7 @@
 				})
 
 				this.setCurrentTime = function() {
-					this.$timeSeftSelect.text(this.$leftSelect.text());
+					this.$timeLeftSelect.text(this.$leftSelect.text());
 					this.$timeMiddleSelect.text(this.$rightSelect.text());
 					this.$timeRightSelect.text($('.u-cal-table .active').text());
 				}
@@ -146,10 +142,10 @@
 					// 初始化是否显示当前日期
 					if (finalOptions.type != 'onlytime') {
 						var $timeSelectDay = $('<div class="u-timeselectday"></div>'); //当前时间提示
-						this.$timeSeftSelect = $('<div></div>');
+						this.$timeLeftSelect = $('<div></div>');
 						this.$timeMiddleSelect = $('<div></div>');
 						this.$timeRightSelect = $('<div>30</div>');
-						$timeSelectDay.append(this.$timeSeftSelect, this.$timeMiddleSelect, this.$timeRightSelect);
+						$timeSelectDay.append(this.$timeLeftSelect, this.$timeMiddleSelect, this.$timeRightSelect);
 						this.$timePanel.append($timeSelectDay);
 					}
 
@@ -197,7 +193,7 @@
 					//确定取消事件
 					timeSure.on('click', function() {
 						if (finalOptions.type != 'onlytime') {
-							finalOptions.year = parseInt(self.$timeSeftSelect.text());
+							finalOptions.year = parseInt(self.$timeLeftSelect.text());
 							finalOptions.month = self.singleToDouble(parseInt(self.$timeMiddleSelect.text())); //-1
 							finalOptions.day = self.singleToDouble(parseInt(self.$timeRightSelect.text()));
 							finalOptions.date = new Date(finalOptions.year, finalOptions.month - 1, finalOptions.day, finalOptions.hour, finalOptions.minute, 00);
